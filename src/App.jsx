@@ -31,7 +31,9 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/sneakers");
+        const response = await fetch(
+          "https://sneakers-api-9ysh.onrender.com/sneakers"
+        );
         const data = await response.json();
         setSneakers(data);
         setTimeout(() => {

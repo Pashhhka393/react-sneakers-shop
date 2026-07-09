@@ -27,7 +27,7 @@ const MainPage = ({
 
   const toggleLiked = useCallback(
     (id, liked) => {
-      fetch(`http://localhost:3001/sneakers/${id}`, {
+      fetch(`https://sneakers-api-9ysh.onrender.com/sneakers/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const MainPage = ({
   );
   const toggleInCart = useCallback(
     (id, inCart) => {
-      fetch(`http://localhost:3001/sneakers/${id}`, {
+      fetch(`https://sneakers-api-9ysh.onrender.com/sneakers/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ inCart: !inCart }),
@@ -77,11 +77,14 @@ const MainPage = ({
   const clearAllCartItems = () => {
     Promise.all(
       cartItems.map((item) => {
-        return fetch(`http://localhost:3001/sneakers/${item.id}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ inCart: false }),
-        });
+        return fetch(
+          `https://sneakers-api-9ysh.onrender.com/sneakers/${item.id}`,
+          {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ inCart: false }),
+          }
+        );
       })
     )
       .then(() => {
