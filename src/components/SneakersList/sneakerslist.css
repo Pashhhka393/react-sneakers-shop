@@ -1,0 +1,24 @@
+.sneakers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 480px) {
+  .sneakers-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 5px; 
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 450px) {
+  .sneakers-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

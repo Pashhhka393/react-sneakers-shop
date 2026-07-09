@@ -1,0 +1,28 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e7f6ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-wrapper {
+  max-width: 1080px;
+  margin: 85px auto 30px;
+  background-color: #ffff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+}
+
+.empty-title {
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 0 25px;
+}

@@ -1,0 +1,23 @@
+.order-title {
+  font-weight: 600;
+  font-size: 22px;
+  color: #87c20a;
+  padding: 30px 0pc 9px;
+}
+
+.button-back__order {
+  width: 325px;
+  padding: 17px 20px 19px;
+  border: 1px solid #9dd458;
+  border-radius: 18px;
+  background: #9dd458;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-back_order:hover {
+  scale: 1.1;
+}

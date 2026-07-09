@@ -1,0 +1,37 @@
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px;
+}
+
+.remove-header__btn {
+  bottom: 15px;
+  font-weight: 700;
+  right: 15px;
+  color: #000000;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-back__info {
+  width: 325px;
+  margin: 0 auto 15px;
+  padding: 17px 20px 19px;
+  border: 1px solid #9dd458;
+  border-radius: 18px;
+  background: #9dd458;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-back__info:hover {
+  scale: 1.1;
+}

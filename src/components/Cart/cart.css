@@ -1,0 +1,162 @@
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #000;
+  opacity: 0.65;
+}
+
+.cart {
+  width: 385px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart h1 {
+  font-size: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.empty-cart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.empty-cart .empty-title {
+  font-weight: 600;
+  padding: 21px 0 10px;
+  font-size: 22px;
+  color: #000;
+}
+.empty-cart p {
+  opacity: 0.4;
+  width: 285px;
+  line-height: 150%;
+  text-align: center;
+  color: #000;
+  padding: 10px 0 40px;
+}
+
+/*----------------------*/
+
+.cart-items {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  padding: 0px 0 20px;
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 4px;
+}
+.cart-items::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 4px;
+}
+
+.cart-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  margin: 30px 30px;
+}
+
+.cart-image {
+  object-fit: contain;
+  margin: 20px;
+  width: 70px;
+  height: 70px;
+}
+
+.cart-item-info p:first-child {
+  max-width: 150px;
+  text-wrap: wrap;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cart-item-info p:last-child {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+}
+
+.remove-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #dbdbdb;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.remove-btn:hover {
+  scale: 1.1;
+}
+
+.end-price {
+  padding: 20px 30px 30px;
+  flex-shrink: 0;
+}
+
+.button-back {
+  display: flex;
+  width: 325px;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.price-answer-1,
+.price-answer-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.price-answer-1 p,
+.price-answer-2 p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.border-price-1,
+.border-price-2 {
+  flex: 1;
+  border-bottom: 1px dashed #ddd;
+  margin: 0 10px -10px;
+}
+
+.price-answer-1 p:last-child,
+.price-answer-2 p:last-child {
+  font-weight: 700;
+}
+
+

@@ -1,0 +1,93 @@
+.sneaker-card {
+  position: relative;
+  width: 210px;
+  border: 1px solid #f3f3f3;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+.sneaker-card p {
+  text-align: center;
+  max-width: 150px;
+  margin: 0 auto;
+  font-size: 14px;
+  padding: 14px 0;
+}
+.sneaker-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #f8f8f8;
+  box-shadow: 0 14px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+.sneaker__card-image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+}
+.card-image img {
+  max-width: 100%;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-item span:first-child {
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #bdbdbd;
+}
+
+.price-item span:last-child {
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+}
+
+@media (max-width: 480px) {
+  .sneaker-card {
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .sneaker__card-image img {
+    max-width: 30px;
+  }
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .sneaker-card p {
+    text-align: center;
+    max-width: 150px;
+    margin: 0 auto;
+    font-size: 12px;
+    padding: 10px 0;
+  }
+  .price-item span:last-child {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  .sneaker-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
