@@ -1,21 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
+import { useCart } from "./context/CartContext";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainPage from "./components/Router/MainPage/MainPage";
 import MyProfile from "./components/Profile/MyProfile";
 import MyFavourite from "./components/Favourite/MyFavourite";
+import { getSneakers } from "./api/sneakers";
 
 const App = () => {
+  const { cartItems } = useCart();
   const [sneakers, setSneakers] = useState([]);
-  const [cartItems, setCartItems] = useState(() => {
-    const saveCartItems = localStorage.getItem("cartSneakers");
-    try {
-      return saveCartItems ? JSON.parse(saveCartItems) : [];
-    } catch (e) {
-      console.log("Ошибка: ", e);
-      return [];
-    }
-  });
   const [emptyProfile, setEmptyProfile] = useState(() => {
     const saveBuySneakers = localStorage.getItem("myBuySneakers");
     try {
@@ -25,20 +19,14 @@ const App = () => {
       return [];
     }
   });
-  const [openCart, setOpenCart] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://sneakers-api-9ysh.onrender.com/sneakers"
-        );
-        const data = await response.json();
+        const data = await getSneakers();
         setSneakers(data);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2000);
+        setIsLoading(false);
       } catch (error) {
         console.log("Ошибка: ", error);
       }
@@ -54,29 +42,24 @@ const App = () => {
 
   const sumAllSneakers = useMemo(() => {
     return cartItems.reduce((summator, item) => {
-      console.log("перерисовка");
       return summator + +item.price.replaceAll(" ", "");
     }, 0);
   }, [cartItems]);
   const taxAllSneaker = useMemo(
     () => Math.round(sumAllSneakers * 0.05),
-    [sumAllSneakers]
+    [sumAllSneakers],
   );
 
   const filteredFavouriteSneakers = sneakers.filter(({ liked }) => liked);
 
   return (
     <div className="bg-wrapper">
-      <Header setOpenCart={setOpenCart} sumAllSneakers={sumAllSneakers} />
+      <Header sumAllSneakers={sumAllSneakers} />
       <Routes>
         <Route
           path="/"
           element={
             <MainPage
-              cartItems={cartItems}
-              setCartItems={setCartItems}
-              openCart={openCart}
-              setOpenCart={setOpenCart}
               sumAllSneakers={sumAllSneakers}
               taxAllSneaker={taxAllSneaker}
               emptyProfile={emptyProfile}

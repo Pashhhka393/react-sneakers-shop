@@ -1,8 +1,11 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
+import { useCart } from "../../context/CartContext";
 
-const Header = ({ setOpenCart, sumAllSneakers }) => {
+const Header = ({ sumAllSneakers }) => {
+  const { toggleCart } = useCart();
+
   return (
     <div className="header">
       <div className="container">
@@ -18,7 +21,7 @@ const Header = ({ setOpenCart, sumAllSneakers }) => {
           <div className="header-user">
             <div className="user-items">
               <div
-                onClick={() => setOpenCart(true)}
+                onClick={() => toggleCart()}
                 style={{ cursor: "pointer" }}
                 className="cart__item"
               >

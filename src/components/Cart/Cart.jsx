@@ -1,11 +1,10 @@
+import { useCart } from "../../context/CartContext";
 import EmptyCart from "../EmptyCart/EmptyCart";
 import OrderCart from "../OrderCart/OrderCart";
 import SneakersInfo from "../SneakersInfo/SneakersInfo";
 import "./cart.css";
 
 const Cart = ({
-  setOpenCart,
-  cartItems,
   toggleInCart,
   sumAllSneakers,
   taxAllSneaker,
@@ -13,17 +12,17 @@ const Cart = ({
   orderCart,
   clearAllCartItems,
 }) => {
+  const { cartItems } = useCart();
+
   return (
     <>
       {orderCart ? (
-        <OrderCart setOpenCart={setOpenCart} setOrderCart={setOrderCart} />
+        <OrderCart setOrderCart={setOrderCart} />
       ) : cartItems.length === 0 ? (
-        <EmptyCart setOpenCart={setOpenCart} />
+        <EmptyCart />
       ) : (
         <SneakersInfo
-          setOpenCart={setOpenCart}
           toggleInCart={toggleInCart}
-          cartItems={cartItems}
           sumAllSneakers={sumAllSneakers}
           taxAllSneaker={taxAllSneaker}
           setOrderCart={setOrderCart}

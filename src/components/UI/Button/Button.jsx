@@ -1,12 +1,15 @@
+import { useCart } from "../../../context/CartContext";
 import "./button.css";
 
-const Button = ({ width, title, setOpenCart }) => {
+const Button = ({ width, title }) => {
+  const { toggleCart } = useCart();
+
   return (
     <>
       <button
         style={{ width: `${width}` }}
         className="button-back"
-        onClick={() => setOpenCart(false)}
+        onClick={() => toggleCart()}
       >
         {title}
       </button>

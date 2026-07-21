@@ -1,6 +1,6 @@
 import Button from "../UI/Button/Button";
 
-const EmptyCart = ({ setOpenCart }) => {
+const EmptyCart = () => {
   return (
     <>
       <div className="cart-overlay"></div>
@@ -10,11 +10,7 @@ const EmptyCart = ({ setOpenCart }) => {
           <img src="./empty-cart.svg" alt="cart-image" />
           <span className="empty-title">Корзина пустая</span>
           <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-          <Button
-            setOpenCart={setOpenCart}
-            width="245px"
-            title="Вернуться назад"
-          />
+          <Button width="245px" title="Вернуться назад" />
         </div>
       </div>
     </>

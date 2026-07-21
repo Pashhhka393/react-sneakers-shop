@@ -1,6 +1,9 @@
+import { useCart } from "../../context/CartContext";
 import "./ordercart.css";
 
-const OrderCart = ({ setOpenCart, setOrderCart }) => {
+const OrderCart = ({ setOrderCart }) => {
+  const { toggleCart } = useCart();
+
   return (
     <>
       <div className="cart-overlay"></div>
@@ -12,7 +15,7 @@ const OrderCart = ({ setOpenCart, setOrderCart }) => {
           <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
           <button
             onClick={() => {
-              setOpenCart(false);
+              toggleCart();
               setOrderCart(false);
             }}
             className="button-back__order"

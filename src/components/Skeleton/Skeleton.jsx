@@ -1,16 +1,23 @@
 import { memo } from "react";
 import SkeletonItem from "../SkeletonItem/SkeletonItem";
 import "./skeleton.css";
+import Spinner from "../Spinner/Spinner";
 
 const Skeleton = () => {
   return (
-    <div className="sneakers-cards">
-      {Array(12)
-        .fill()
-        .map((_, i) => (
-          <SkeletonItem key={i} />
-        ))}
-    </div>
+    <>
+      <div className="skeleton-mobile">
+        <Spinner />
+        <p>Загрузка...</p>
+      </div>
+      <div className="sneakers-cards desktop-only">
+        {Array(12)
+          .fill()
+          .map((_, i) => (
+            <SkeletonItem key={i} />
+          ))}
+      </div>
+    </>
   );
 };
 

@@ -6,19 +6,12 @@
   padding-bottom: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .sneakers-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    padding: 5px; 
+    padding: 5px;
     overflow: hidden;
-  }
-}
-
-@media (max-width: 450px) {
-  .sneakers-cards {
-    display: grid;
-    grid-template-columns: 1fr;
   }
 }

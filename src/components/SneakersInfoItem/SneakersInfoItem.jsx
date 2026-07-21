@@ -1,4 +1,8 @@
-const SneakersInfoItem = ({ cartItems, toggleInCart }) => {
+import { useCart } from "../../context/CartContext";
+
+const SneakersInfoItem = ({ toggleInCart }) => {
+  const { cartItems } = useCart();
+
   return (
     <>
       {cartItems.map((sneaker) => {
